@@ -1,0 +1,99 @@
+/*
+css for weather widget in header
+*/
+#stlweb_weather {
+    height: 60px;
+}
+
+#stlweb_weather img {
+    height: 20px
+}
+
+#stlweb_weather p {
+    margin: 0px;
+    text-align: center;
+}
+
+#stlweb_weather div {
+    margin-left: 12px;
+}
+
+#stlweb_weather .img_contain {
+    text-align: center
+}
+
+/*
+css for front page recent posts.
+*/
+
+#front-posts li p {
+
+    -webkit-transition: height 1s, -webkit-transform 2s;
+    transition: height 1s, transform 2s;
+    height: 0px;
+    overflow: hidden;
+}
+
+#front-posts li:hover p {
+
+    height: 100px;
+    -webkit-box-shadow: 9px 7px 30px -8px rgba(0,0,0,1);
+    -moz-box-shadow: 9px 7px 30px -8px rgba(0,0,0,1);
+    box-shadow: 9px 7px 30px -8px rgba(0,0,0,1);
+    border-radius: 0px 0px 25px 15px;
+    -moz-border-radius: 0px 0px 25px 15px;
+    -webkit-border-radius: 0px 0px 25px 15px;
+    border: 0px solid #000000;
+}
+.bs-docs-header{
+    background-color: #FFFFFF;
+
+}
+#intro {
+    background: url(../dist/img/intro.png) 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+}
+#home {
+    background: url(../dist/img/17H.jpg) 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 200px 0;
+    background-size: 100%;
+}
+#about {
+    background: url(../dist/img/about.png) 50% 0 fixed;
+    height: auto;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    padding: 100px 0;
+    color: #fff;
+}
+
+.oreo{
+
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-shadow:
+    3px 3px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#expertise div div{background-color: #ffffff}
+
+#main-content{min-height: 600px;}
+
+.cntctfrm_contact_form input, textarea {
+    color:#000000;}
