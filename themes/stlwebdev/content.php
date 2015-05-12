@@ -47,7 +47,7 @@
 	<div class="entry-content">
 		<?php
 
-		echo $post->post_content;
+		//echo $post->post_content;
 			the_content();
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title"></span>',
