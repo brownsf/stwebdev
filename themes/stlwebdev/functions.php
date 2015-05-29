@@ -179,3 +179,17 @@ function stlweb_save_postdata($postid)
         delete_post_meta($postid, 'my_featured_post_field');
     }
 }
+
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    register_post_type( 'my_service',
+        array(
+            'labels' => array(
+                'name' => __( 'Services' ),
+                'singular_name' => __( 'Service' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+        )
+    );
+}
