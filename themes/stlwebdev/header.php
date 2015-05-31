@@ -45,7 +45,7 @@
             <?php wp_nav_menu(array('theme_location' => 'header-menu', 'menu_class' => 'nav navbar-nav', 'container' => false)); ?>
 
             <ul class="nav navbar-nav navbar-right">
-
+                <?php wp_nav_menu(array('theme_location' => 'header-menu', 'menu_class' => 'nav navbar-nav', 'container' => false)); ?>
             </ul>
 
             <div id="stlweb_weather" class="pull-right">

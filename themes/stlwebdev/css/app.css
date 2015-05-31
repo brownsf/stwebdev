@@ -59,7 +59,9 @@ css for front page recent posts.
     padding: 100px 0;
 }
 #home {
-    background: url(../dist/img/17H.jpg) 50% 0 fixed;
+    background-image: url(../dist/img/17H.jpg);
+    background-position: 50% 0;
+    background-size: cover;
     height: auto;
     margin: 0 auto;
     width: 100%;
