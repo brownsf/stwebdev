@@ -3,7 +3,37 @@
  */
 $(document).ready(function(){
 
-     var $window = $(window);
+    var count = 2;
+    $(window).scroll(function(){
+        console.log($(window).scrollTop());
+        console.log($('#about').offset().top - $(window).height());
+
+        if  ($(window).scrollTop() < $('#about').offset().top - $(window).height()+200){
+            var total = $("#content").attr('data-max');
+            console.log(total);
+            if (count > total){
+                return false;
+            }else{
+                loadArticle(count);
+            }
+            count++;
+        }
+    });
+    function loadArticle(pageNumber) {
+        $.ajax({
+            url: "/wp-admin/admin-ajax.php",
+            type:'POST',
+            data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop',
+            success: function(html){
+                $("#content").append(html);    // This will be the div where our content will be loaded
+            }
+        });
+        return false;
+    }
+
+
+
+    var $window = $(window);
 
     $('section[data-type="background"]').each(function () {
         // declare the variable to affect the defined data-type

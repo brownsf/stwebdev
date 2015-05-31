@@ -9,7 +9,11 @@ Author URI: http://stlwebdeveloper.com/
     font-size: 4em;
     margin-bottom: 25px;
 }
-
+li{
+    list-style: none;
+    list-style-padding: inside;
+}
+.widget ul{padding: 0px;}
 @media (max-width: 768px) {
     #home{padding: 100px 0;}
     #stlweb_weather{display: none}

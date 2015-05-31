@@ -9,7 +9,7 @@ get_header(); ?>
         <div class="row">
 
             <div id="primary" class="content-area col-md-9">
-                <div id="content" class="site-content" role="main">
+                <div id="content" class="site-content" data-max="<?php echo $wp_query->max_num_pages; ?>" role="main">
                 <h1>Blog</h1>
                     <?php
 
