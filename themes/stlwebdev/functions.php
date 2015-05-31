@@ -6,16 +6,20 @@
  * Time: 9:26 PM
  */
 
-function new_excerpt_length() {
+function new_excerpt_length()
+{
     return 50;
 }
+
 add_filter('excerpt_length', 'new_excerpt_length');
 
 // Changing excerpt more
-function new_excerpt_more($more) {
+function new_excerpt_more($more)
+{
     global $post;
-    return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Read More</a>';
+    return '... <a class="moretag" href="' . get_permalink($post->ID) . '"> Read More</a>';
 }
+
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
@@ -33,9 +37,23 @@ function stlweb_scripts()
 {
     wp_enqueue_style('app', get_template_directory_uri() . '/css/app.css');
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_script('bootstrap',get_template_directory_uri().'/dist/js/bootstrap.js');
-    wp_enqueue_script('app',get_template_directory_uri() . '/js/app.js',array('bootstrap'));
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/dist/js/bootstrap.js');
+    wp_enqueue_script('app', get_template_directory_uri() . '/js/app.js', array('bootstrap'));
 
+}
+
+add_action('widgets_init', 'theme_slug_widgets_init');
+function theme_slug_widgets_init()
+{
+    register_sidebar(array(
+        'name' => __('Main Sidebar', 'stlweb'),
+        'id' => 'sidebar-1',
+        'description' => __('Widgets in this area will be shown on all post pages.', 'stlweb'),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h2 class="widgettitle">',
+        'after_title' => '</h2>',
+    ));
 }
 
 add_action('wp_enqueue_scripts', 'stlweb_scripts');
@@ -98,7 +116,8 @@ function theme_page_settings()
                 <tr valign="top">
                     <th scope="row"><?php _e('Footer Content', 'stlweb'); ?></th>
                     <td>
-                        <textarea name="stlweb_footer_content"><?php echo get_option('stlweb_footer_content'); ?></textarea>
+                        <textarea
+                            name="stlweb_footer_content"><?php echo get_option('stlweb_footer_content'); ?></textarea>
 
                         <p class="description"><?php _e('The content for the contact us area.', 'stlweb'); ?></p>
                     </td>
@@ -144,40 +163,39 @@ function stlweb_publish_in_frontpage()
 {
     global $post;
     $value = get_post_meta($post->ID, '_publish_in_frontpage', true);
-?>
-<div class="misc-pub-section misc-pub-section-last">
+    ?>
+    <div class="misc-pub-section misc-pub-section-last">
          <span id="timestamp">'
         <label>
             <input type="checkbox"<?php echo(!empty($value) ? ' checked="checked" ' : null) ?> value="1"
                    name="publish_in_frontpage"/> Publish to frontpage
         </label>
         </span>
-</div>;
+    </div>;
 <?php
 }
 
-add_action( 'save_post', 'stlweb_save_postdata');
+add_action('save_post', 'stlweb_save_postdata');
 function stlweb_save_postdata($postid)
 {
     /* check if this is an autosave */
-    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return false;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return false;
 
     /* check if the user can edit this page */
-    if ( !current_user_can( 'edit_page', $postid ) ) return false;
+    if (!current_user_can('edit_page', $postid)) return false;
 
     /* check if there's a post id and check if this is a post */
     /* make sure this is the same post type as above */
-    if(empty($postid) || $_POST['post_type'] != 'post' ) return false;
+    if (empty($postid) || $_POST['post_type'] != 'post') return false;
 
     /* if you are going to use text fields, then you should change the part below */
     /* use add_post_meta, update_post_meta and delete_post_meta, to control the stored value */
 
     /* check if the custom field is submitted (checkboxes that aren't marked, aren't submitted) */
-    if(isset($_POST['my_featured_post_field'])){
+    if (isset($_POST['my_featured_post_field'])) {
         /* store the value in the database */
-        add_post_meta($postid, 'my_featured_post_field', 1, true );
-    }
-    else{
+        add_post_meta($postid, 'my_featured_post_field', 1, true);
+    } else {
         /* not marked? delete the value in the database */
         delete_post_meta($postid, 'my_featured_post_field');
     }

@@ -15,16 +15,14 @@ get_header();
                 <div class="row">
                     <div class="col-md-12">
 
-                        <?php echo the_title('<h2>','</h2>');?>
-                        <?php the_content();?>
+                        <?php echo the_title('<h2>', '</h2>'); ?>
+                        <?php the_content(); ?>
                     </div>
 
                 </div>
 
                 <div class="row">
                     <div class="span9">
-                        <div class="row">
-                            <div class="col-md-5">
 
                                 <ul class="nav nav-tabs" role="tablist" id="myTab">
 
@@ -68,13 +66,11 @@ get_header();
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
             <!-- #content -->
         </div>
         <!-- #primary -->
-        <?php get_sidebar('content'); ?>
+
     </div><!-- #main-content -->
     <script>
 
@@ -88,5 +84,4 @@ get_header();
 
     </script>
 <?php
-get_sidebar();
 get_footer();

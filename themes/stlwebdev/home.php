@@ -1,9 +1,44 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Scott
- * Date: 10/11/2014
- * Time: 9:58 PM
+ * The main template file
  */
 
-echo 'hi';
+get_header(); ?>
+
+    <div id="main-content" class="main-content container ">
+        <div class="row">
+
+            <div id="primary" class="content-area col-md-9">
+                <div id="content" class="site-content" role="main">
+                <h1>Blog</h1>
+                    <?php
+
+                    if (have_posts()) :
+                        // Start the Loop.
+                        while (have_posts()) : the_post();
+                            ?> <h3><a href="<?php echo get_the_permalink() ?>"><?php echo get_the_title() ?></a></h3>
+                            <?php
+                            the_excerpt();
+
+
+                        endwhile;
+
+
+                    else :
+                        // If no content, include the "No posts found" template.
+                        ?>No Posts found<?php
+
+                    endif;
+                    ?>
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary -->
+            <?php get_sidebar('content'); ?>
+        </div>
+    </div><!-- #main-content -->
+
+<?php
+get_sidebar();
+get_footer();

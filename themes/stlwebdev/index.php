@@ -23,7 +23,7 @@ get_header(); ?>
                     while ( have_posts() ) : the_post();
                         ?> <h3><a href="<?php echo get_the_permalink()?>"><?php echo get_the_title()?></a> </h3>
                         <?php
-                    the_excerpt();
+                    the_content();
 
 
                     endwhile;
