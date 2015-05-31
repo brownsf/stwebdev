@@ -4,8 +4,8 @@ Author: stlwebdeveloper
 Author URI: http://stlwebdeveloper.com/
 */
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-.front-page article p{max-width:840px}
+.home article p{max-width:840px}
 .oreo{font-family: 'Lobster', cursive;
     font-size: 4em;
     margin-bottom: 25px;
-}}
+}
