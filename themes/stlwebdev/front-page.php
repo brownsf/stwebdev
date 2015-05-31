@@ -27,7 +27,7 @@ get_header(); ?>
             </div>
         </div>
     </section>
-    <section id="home" data-speed="1" data-type="background">
+    <section id="home" data-speed="3" data-type="background">
         <div class="container-fluid">
             <h2 class="oreo">Areas of Expertise</h2>
                 <!-- #main-content -->
