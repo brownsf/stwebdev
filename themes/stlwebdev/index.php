@@ -21,7 +21,9 @@ get_header(); ?>
                 if ( have_posts() ) :
                     // Start the Loop.
                     while ( have_posts() ) : the_post();
-
+                        ?> <h3><a href="<?php echo get_the_permalink()?>"><?php echo get_the_title()?></a> </h3>
+                        <?php
+                    the_excerpt();
 
 
                     endwhile;
