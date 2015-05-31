@@ -27,7 +27,7 @@
           href="<?php echo get_template_directory_uri(); ?>/dist/css/bootstrap.css">
     <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class() ?>>
 <header class="navbar navbar-default bs-docs-nav" id="top" role="banner">
     <div class="container">
         <div class="navbar-header">
