@@ -8,12 +8,12 @@ $(document).ready(function(){
         console.log(($('#about').offset().top - $(window).height()+25)+" "+$(window).scrollTop());
 
         if  ($(window).scrollTop() > $('#about').offset().top - $(window).height()+25){
-            var total = $("#content").attr('data-max');
+            var total = $(".blog #content").attr('data-max');
 
             if (count > (parseInt(total)+parseInt(2))){
                 return false;
             }else{
-                
+
                 $('#loader').show();
                 loadArticle(count);
             }
