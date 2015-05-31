@@ -10,6 +10,6 @@ Author URI: http://stlwebdeveloper.com/
     margin-bottom: 25px;
 }
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 320px) and (max-device-width : 600px) {
     .home #home{padding: 100px 0;}
 }
