@@ -1,4 +1,5 @@
-<?php wp_footer(); ?>
+
+
 <section id="about" data-speed="2" data-type="background">
     <div class="container">
         <h3 class="oreo">Contact</h3>
@@ -19,5 +20,5 @@
 
 </body>
 <script src="<?php echo get_template_directory_uri(); ?>/dist/js/bootstrap.js"></script>
-
+<?php wp_footer(); ?>
 </html>

@@ -5,15 +5,16 @@ $(document).ready(function(){
 
     var count = 2;
     $(window).scroll(function(){
+        console.log(($('#about').offset().top - $(window).height()+25)+" "+$(window).scrollTop());
 
-
-        if  ($(window).scrollTop() < $('#about').offset().top - $(window).height()+200){
+        if  ($(window).scrollTop() > $('#about').offset().top - $(window).height()+25){
             var total = $("#content").attr('data-max');
-            console.log(total+" "+count);
-            if (count > (parseInt(total)+parseInt(1))){
+
+            if (count > (parseInt(total)+parseInt(2))){
                 return false;
             }else{
-                console.log((parseInt(total)+parseInt(1))+" "+count);
+                
+                $('#loader').show();
                 loadArticle(count);
             }
             count++;
@@ -25,7 +26,9 @@ $(document).ready(function(){
             type:'POST',
             data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop',
             success: function(html){
+               //
                 $("#content").append(html);    // This will be the div where our content will be loaded
+                $('#loader').hide();
             }
         });
         return false;

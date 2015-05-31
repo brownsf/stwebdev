@@ -10,7 +10,7 @@ get_header(); ?>
 
             <div id="primary" class="content-area col-md-9">
                 <div id="content" class="site-content" data-max="<?php echo $wp_query->max_num_pages; ?>" role="main">
-                <h1>Blog</h1>
+                    <h1>Blog</h1>
                     <?php
 
                     if (have_posts()) :
@@ -32,13 +32,20 @@ get_header(); ?>
                     ?>
 
                 </div>
+
                 <!-- #content -->
             </div>
             <!-- #primary -->
             <?php get_sidebar('content'); ?>
         </div>
     </div><!-- #main-content -->
-
+    <div id="loader" class="container">
+        <div class="row">
+            <div class="col-md-3 offset-3">
+                <div class="loader">Loading...</div>
+            </div>
+        </div>
+    </div>
 <?php
 get_sidebar();
 get_footer();
