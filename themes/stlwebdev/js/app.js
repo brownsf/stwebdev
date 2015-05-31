@@ -1,23 +1,27 @@
 /**
  * Created by Scott on 5/31/2015.
  */
+function isNumeric(n) {
+    return !isNaN(parseFloat(n)) && isFinite(n);
+}
 $(document).ready(function(){
 
     var count = 2;
     $(window).scroll(function(){
         console.log(($('#about').offset().top - $(window).height()+25)+" "+$(window).scrollTop());
 
-        if  ($(window).scrollTop() > $('#about').offset().top - $(window).height()+25){
-            var total = $(".blog #content").attr('data-max');
+        if  ($(window).scrollTop() > $('#about').offset().top - $(window).height()+25) {
+            var total = $("#content").attr('data-max');
+            if (isNumeric(totla)) {
+                if (count > (parseInt(total) + parseInt(2))) {
+                    return false;
+                } else {
 
-            if (count > (parseInt(total)+parseInt(2))){
-                return false;
-            }else{
-
-                $('#loader').show();
-                loadArticle(count);
+                    $('#loader').show();
+                    loadArticle(count);
+                }
+                count++;
             }
-            count++;
         }
     });
     function loadArticle(pageNumber) {
