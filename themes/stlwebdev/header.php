@@ -14,7 +14,7 @@
 <!--<![endif]-->
 <head>
     <script>
-        var ajaxUrl=<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php";
+        var ajaxUrl="<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php";
     </script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
