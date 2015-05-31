@@ -8,11 +8,10 @@ $(document).ready(function(){
 
     var count = 2;
     $(window).scroll(function(){
-        console.log(($('#about').offset().top - $(window).height()+25)+" "+$(window).scrollTop());
 
         if  ($(window).scrollTop() > $('#about').offset().top - $(window).height()+25) {
             var total = $("#content").attr('data-max');
-            if (isNumeric(totla)) {
+            if (isNumeric(total)) {
                 if (count > (parseInt(total) + parseInt(2))) {
                     return false;
                 } else {
