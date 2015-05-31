@@ -68,7 +68,6 @@ css for front page recent posts.
     position: relative;
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
     padding: 200px 0;
-    background-size: 100%;
 }
 #about {
     background: url(../dist/img/about.png) 50% 0 fixed;
