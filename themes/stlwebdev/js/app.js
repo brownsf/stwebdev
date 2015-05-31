@@ -11,7 +11,7 @@ $(document).ready(function(){
         if  ($(window).scrollTop() < $('#about').offset().top - $(window).height()+200){
             var total = $("#content").attr('data-max');
             console.log(total);
-            if (count > total){
+            if (count > total+1){
                 return false;
             }else{
                 loadArticle(count);
