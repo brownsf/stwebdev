@@ -1,6 +1,8 @@
 /*
 Theme Name: Stlwebdev
-Theme URI: http://wordpress.org/themes/twentyfourteen
 Author: stlwebdeveloper
 Author URI: http://stlwebdeveloper.com/
 */
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+.front-page article p{max-width:840px}
+.oreo{font-font: 'Lobster', cursive;}
