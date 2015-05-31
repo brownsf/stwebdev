@@ -33,6 +33,8 @@ function stlweb_scripts()
 {
     wp_enqueue_style('app', get_template_directory_uri() . '/css/app.css');
     wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_script('bootstrap',get_template_directory_uri().'/dist/js/bootstrap.js');
+    wp_enqueue_script('app',get_template_directory_uri() . '/js/app.js',array('bootstrap'));
 
 }
 

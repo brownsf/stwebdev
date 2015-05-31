@@ -32,7 +32,7 @@
     <div class="container">
         <div class="navbar-header">
             <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"
-                    data-target=".bs-navbar-collapse">
+                    data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -40,11 +40,12 @@
             </button>
             <a href="/" class="navbar-brand">St. Louis Web Developer</a>
         </div>
-        <nav class="collapse navbar-collapse" role="navigation">
+        <div id="navbar" class="navbar-collapse collapse">
+
             <?php wp_nav_menu(array('theme_location' => 'header-menu', 'menu_class' => 'nav navbar-nav', 'container' => false)); ?>
 
             <ul class="nav navbar-nav navbar-right">
-                <?php wp_nav_menu(array('theme_location' => 'header-menu', 'menu_class' => 'nav navbar-nav', 'container' => false)); ?>
+
             </ul>
 
             <div id="stlweb_weather" class="pull-right">
@@ -69,7 +70,7 @@
                 <?php }
                 ?>
             </div>
-        </nav>
+        </div>
     </div>
 </header>
 
