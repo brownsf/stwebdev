@@ -5,15 +5,15 @@ $(document).ready(function(){
 
     var count = 2;
     $(window).scroll(function(){
-        console.log($(window).scrollTop());
-        console.log($('#about').offset().top - $(window).height());
+
 
         if  ($(window).scrollTop() < $('#about').offset().top - $(window).height()+200){
             var total = $("#content").attr('data-max');
-            console.log(total);
-            if (count > total+1){
+            console.log(total+" "+count);
+            if (count > (parseInt(total)+parseInt(1))){
                 return false;
             }else{
+                console.log((parseInt(total)+parseInt(1))+" "+count);
                 loadArticle(count);
             }
             count++;
