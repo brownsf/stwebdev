@@ -186,7 +186,7 @@ function stlweb_save_postdata($postid)
 
     /* check if there's a post id and check if this is a post */
     /* make sure this is the same post type as above */
-    if (empty($postid) || $_POST['post_type'] != 'post') return false;
+    if (!isset($_POST['post_type'])||empty($postid) || $_POST['post_type'] != 'post') return false;
 
     /* if you are going to use text fields, then you should change the part below */
     /* use add_post_meta, update_post_meta and delete_post_meta, to control the stored value */
