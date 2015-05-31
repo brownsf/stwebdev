@@ -13,6 +13,9 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+    <script>
+        var ajaxUrl=<?php bloginfo('wpurl') ?>/wp-admin/admin-ajax.php";
+    </script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php wp_title('|', true, 'right'); echo bloginfo('name'); ?></title>

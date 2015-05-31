@@ -21,7 +21,7 @@ $(document).ready(function(){
     });
     function loadArticle(pageNumber) {
         $.ajax({
-            url: "/wp-admin/admin-ajax.php",
+            url: ajaxUrl,
             type:'POST',
             data: "action=infinite_scroll&page_no="+ pageNumber + '&loop_file=loop',
             success: function(html){
